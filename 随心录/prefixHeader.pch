@@ -1,0 +1,24 @@
+//
+//  prefixHeader.pch
+//  随心录
+//
+//  Created by Hjie on 2017/4/13.
+//  Copyright © 2017年 Hjie. All rights reserved.
+//
+
+#ifndef prefixHeader_h
+#define prefixHeader_h
+
+#import "Masonry.h"
+#import "TFTipLabel.h"
+/// 颜色
+#define COLOR_RGB(rgb) [UIColor colorWithRed:((rgb & 0xff0000) >> 16) / 255.0 green:((rgb & 0xff00) >> 8) / 255.0 blue:(rgb & 0xff) / 255.0 alpha:1]
+#define COLOR_RGB_ALPHA(rgb, alpha) [UIColor colorWithRed:((rgb & 0xff0000) >> 16) / 255.0 green:((rgb & 0xff00) >> 8) / 255.0 blue:(rgb & 0xff) / 255.0 alpha:alpha]
+/** 1    背景色    - 浅灰 */
+#define kBackgroundColor COLOR_RGB(0xefeff4)
+/** 5.3  按钮色    - 蓝3  */
+#define kButtonBlue3Color COLOR_RGB(0x6699cc)
+#define kFontBody [UIFont preferredFontForTextStyle:UIFontTextStyleBody]
+
+#define kDocumentPath NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES).firstObject
+#endif /* prefixHeader_h */
