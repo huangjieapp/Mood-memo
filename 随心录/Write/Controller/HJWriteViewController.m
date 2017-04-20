@@ -29,7 +29,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	self.view.backgroundColor = kBackgroundColor;
+	self.view.backgroundColor = [UIColor whiteColor];
 	self.title = @"心物语";
 	[self initUI];
 	
@@ -54,15 +54,16 @@
 	titleLabel.numberOfLines = 0;
 	titleLabel.text = @"心语:";
 	titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
-	titleLabel.backgroundColor = [UIColor blueColor];
+//	titleLabel.backgroundColor = [UIColor blueColor];
 	titleLabel.frame = [titleLabel textRectForBounds:titleLabel.frame limitedToNumberOfLines:titleLabel.numberOfLines];
 	[self.view addSubview:titleLabel];
 	
 	
-	UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(titleLabel.frame)+20, self.view.bounds.size.width, self.view.bounds.size.height - 64-64-60)];
+	UITextView *textView = [[UITextView alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(titleLabel.frame)+20, self.view.bounds.size.width - 20, self.view.bounds.size.height - 64-64-60)];
 	self.textView = textView;
-	textView.backgroundColor = [UIColor redColor];
+//	textView.backgroundColor = [UIColor redColor];
 	textView.delegate = self;
+	textView.font = [UIFont preferredFontForTextStyle:UIFontTextStyleFootnote];
 	[self.view addSubview:textView];
 	if (self.nameStr) {
 		textView.text = [HJSaveNoteData readFile:self.nameStr];

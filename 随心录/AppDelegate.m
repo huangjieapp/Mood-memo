@@ -31,12 +31,12 @@
 		NSLog(@"第一次启动");
 	}else{
 		NSLog(@"不是第一次启动");
-//		if (![[NSUserDefaults standardUserDefaults] boolForKey:@"passBtn"]) {
-//			self.window.rootViewController = [[HJLoginViewController alloc]init];
-//		} else {
-//			self.window.rootViewController = [[HJHomeViewController alloc]init];
-        self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[HJHomeViewController new]];
-//		}
+		if (![[NSUserDefaults standardUserDefaults] boolForKey:@"passBtn"]) {
+			self.window.rootViewController = [[HJLoginViewController alloc]init];
+		} else {
+			self.window.rootViewController = [[HJHomeViewController alloc]init];
+//        self.window.rootViewController = [[UINavigationController alloc]initWithRootViewController:[HJHomeViewController new]];
+		}
 
 	}
 	[self.window makeKeyAndVisible];
